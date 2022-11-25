@@ -1,0 +1,65 @@
+nav {
+  position: absolute;
+  top: 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-family: 'PT Sans Narrow';
+  font-size: 22px; 
+  font-weight: 450;
+}
+.header-left{
+  display: flex ;
+  padding: 20px 0 0 85px;  
+}
+.header-left .text{
+  display:inline-block ;
+  text-align: center;
+ 
+  text-decoration: none;
+  
+}
+.header-left a span{
+  color: aliceblue;
+  cursor: pointer;
+}
+.img-logo img {
+  width: 90px;
+  height: 80px;
+}
+.header-center ul{
+  display: flex;
+  justify-content: space-around;
+
+}
+.header-center ul li {
+  list-style: none;
+  padding: 30px;
+
+}
+.header-center ul li a{
+  text-decoration: none;
+  color: white;
+  text-shadow: 0 0 20px red;
+  font-family: 'PT Sans Narrow';
+
+
+  
+}
+.header-center ul li a :hover{
+  border-bottom: 2px solid red ;
+
+}
+.header-center ul li :hover{
+  color: rgb(249, 36, 17);
+}
+.header-right{
+  padding-top: 25px;
+}
+.header-right button{
+  padding: 7px 50px;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: rgb(117, 113, 106);
+  box-shadow: 0 0 20px red;
+}

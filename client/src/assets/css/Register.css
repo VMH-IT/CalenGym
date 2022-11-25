@@ -1,0 +1,287 @@
+.create-account {
+  background-image: url(@/assets/img/workout6.jpg);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+
+}
+
+.account {
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.4);
+  transition: .4s;
+  border-radius: 20px;
+  position: absolute;
+  left:  200px;
+}
+
+.account:hover {
+  box-shadow: 0 0 50px rgb(110, 11, 2);
+  transition: .4s;
+}
+
+.color {
+  color: rgb(192, 98, 90);
+}
+
+form {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  border-radius: 24px;
+  border-radius: 50%;
+}
+
+.center {
+  justify-content: center;
+  display: flex;
+  color: rgb(192, 98, 90);
+}
+
+.center img {
+  width: 200px;
+  height: auto;
+}
+
+.flex {
+  display: flex;
+  margin-left: 30px;
+}
+
+.main {
+
+  width: 800px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgb(192, 98, 90);
+  border-radius: 20px;
+
+}
+
+.img {
+  height: auto;
+  /* background-image: url(); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.background svg {
+  padding: 20px 30px;
+  color: rgb(192, 98, 90);
+}
+
+.rigth {
+  width: -webkit-fill-available;
+}
+
+.block-input {
+  width: 45%;
+  padding: 5% 5% 0 5%;
+  line-height: 2;
+
+}
+
+/*------------*/
+.form-input:hover {
+  box-shadow: 0 0 30px rgb(103, 12, 3);
+  
+}
+.form-input {
+  background :rgb(114, 103, 102);
+  border-radius: 7px
+}
+.form-input:focus {
+  box-shadow: 0 0 30px rgb(169, 44, 32);
+}
+
+/*------------*/
+.gender {
+  color: rgb(192, 98, 90);
+  margin-top: 20px;
+}
+
+.dpx {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.py-lv label {
+  line-height: 40px;
+  color: #999;
+}
+
+.py label {
+  display: block;
+  line-height: 40px;
+  color: #999;
+}
+
+.btt {
+  margin-right: 70px;
+  width: 50%;
+  border: 1px solid rgb(192, 98, 90);
+  height: 40px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 0 0 10px rgb(103, 12, 3);
+  
+}
+.btt :hover {
+  box-shadow: 0 0 20px red ;
+}
+
+
+.btn {
+  width: 100%;
+  margin: 20px;
+  justify-content: center;
+  display: flex;
+}
+
+.form-pass {
+  padding: 0 60px;
+  position: relative;
+  /* justify-content: space-between; */
+}
+
+.password-left {
+  width: 300px;
+  line-height: 1.8; 
+}
+.confirm-password{
+  position: absolute;
+  top: 270px;
+  right :80px
+  
+}
+
+.pass {
+  height: 680px;
+  width: 800px;
+  padding: 20px 20px 20px 0px;
+  background: linear-gradient(125deg, #383745 45%, #22202B 45%);
+  border-radius: 16px;
+  z-index: 1000;
+  position: absolute;
+  left: 200px;
+  top : 145px
+
+}
+.password-right{
+  line-height: 1.8;
+}
+
+.pass-pw {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  position: absolute;
+  top: 0px;
+  background-color: #878279a6;
+
+}
+.avata-wrapper {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: #9faab7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+.show-profile{
+  margin: 30px 0 0 20px;
+}
+.show-pass{
+  margin-top: 10px;
+}
+
+.exit {
+  display: flex;
+  justify-content: end;
+  color: rgb(192, 98, 90);
+}
+.exit :hover{
+  box-shadow: 0px 0px 30px rgb(103, 12, 3);
+  color: rgb(192, 98, 90);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 6.5px;
+  right: 0;
+  bottom: 0;
+  left: 0px;
+  height: 25px;
+  width: 25px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+
+.option-input:hover {
+  background: #9faab7;
+  box-shadow: 0 0 20px rgb(103, 12, 3);
+}
+
+.option-input:checked {
+  background: rgb(192, 98, 90);
+}
+
+.option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: rgb(192, 98, 90);
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+
+.option-input.radio {
+  border-radius: 50%;
+  background: rgb(114, 103, 102) ;  
+}
+
+.option-input.radio::after {
+  border-radius: 50%;
+}
+
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 751px) {}
