@@ -21,36 +21,55 @@
           <a href="#">ABOUT</a>
           <span></span>
         </li>
-        <li class="calander">
-          <a href="#">CALANDER</a>
-          <span></span>
-        </li>
-        <li class="contact">
-          <a href="#">CONTACT</a>
-          <span></span>
-        </li>
-        <li class="sign_in">
+        <li class="Calander">
           <a href="#">
-            <router-link to="/register">SIGN UP</router-link>
+            <router-link to="/Calendar">CALANDER</router-link>
           </a>
+          <span></span>
+        </li>
+        <li class="category">
+          <a href="#">
+            <router-link to="/categories">CATEGORY</router-link>
+          </a>
+          <span></span>
+        </li>
+        <li class="sign_in" v-if="currentUser.token === null">
+          <a href="#">
+            <router-link to="/register"> SIGN UP </router-link>
+          </a>
+          <span></span>
+        </li>
+        <li class="logout" v-else>
+          <a href="#" @click="signOut($store.state)"> LOGOUT </a>
           <span></span>
         </li>
       </ul>
     </div>
     <div class="header-right">
-      <button>
-        <router-link to="/login">LOGIN NOW</router-link>
+      <button v-if="currentUser.token === null">
+        <router-link to="/login" class="login">LOGIN NOW</router-link>
       </button>
     </div>
   </nav>
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex';
+const { mapState, mapActions } = createNamespacedHelpers('auth');
 export default {
+  computed: mapState(['currentUser']),
+  methods: {
 
-}
+    ...mapActions(['signOut']),
+  },
+};
 </script>
 
 <style scoped>
 @import url(@/assets/css/header.css);
+
+.login {
+  text-decoration: none;
+  color: aliceblue;
+}
 </style>

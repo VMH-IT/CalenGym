@@ -120,7 +120,7 @@ hr {
   color: rgb(192, 98, 90);
 }
 
-.footer__section > p {
+.footer__section>p {
   color: white;
   text-align: center;
   margin-bottom: -2rem;

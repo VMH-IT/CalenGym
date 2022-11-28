@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style scoped>
-w .testimonial__Section {
+.testimonial__Section {
   background-color: #1b1b2a;
   display: flex;
   justify-content: space-evenly;
@@ -59,6 +59,7 @@ w .testimonial__Section {
 .testimonial h1 {
   font-size: 2rem;
   margin-top: 3rem;
+  color: rgb(192, 98, 90);
 }
 
 .testimonial_image {

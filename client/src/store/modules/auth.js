@@ -1,30 +1,28 @@
-import axios from '@/axios/axios';
-import router from '@/router';
-import { getField, updateField } from 'vuex-map-fields';
+import axios from "@/axios/axios";
+import router from "@/router";
+import { getField, updateField } from "vuex-map-fields";
 
 export default {
   namespaced: true,
   state: {
     currentUser: {},
     loginForm: {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     },
     registerForm: {
-      height: '',
-      weight: '',
-      lname: '',
-      fname: '',
-      email: '',
-      phone: '',
+      height: "",
+      weight: "",
+      lname: "",
+      fname: "",
+      email: "",
+      phone: "",
       gender: 0,
-      age: '',
-      password: '',
-      Confirm: '',
+      age: "",
+      password: "",
+      Confirm: "",
     },
-    listExercise: {
-      
-    }
+    listExercise: {},
   },
   getters: {
     getField,
@@ -38,7 +36,8 @@ export default {
       state.currentUser.last_name = newName;
     },
     clearUserInfo(state) {
-      (state.currentUser.token = null), (state.currentUser.name = '');
+      console.log("test2");
+      (state.currentUser.token = null), (state.currentUser.name = "");
     },
     clearUserRegisterInfo(state) {
       state.registerForm = {};
@@ -50,31 +49,30 @@ export default {
   actions: {
     async signIn({ state, commit }) {
       await axios
-        .post('/users/sessions', {
+        .post("/users/sessions", {
           email: state.loginForm.email,
           password: state.loginForm.password,
         })
         .then((response) => {
+          alert("Đăng nhập thành công!");
           console.log(response);
-          commit('setUserToken', response.data.token);
-          commit('setUserName', response.data.user.last_name);
-          alert('Đăng nhập thành công!');
-          router.push('/Calendar.vue');
+          commit("setUserToken", response.data.token);
+          router.push("/");
         })
         .catch((error) => {
           console.log(error);
-          commit('clearLoginForm');
+          commit("clearLoginForm");
         });
     },
-
     signOut({ commit }) {
-      commit('clearUserInfo');
-      router.push('/');
+      console.log("test");
+      commit("clearUserInfo");
+      router.push("/");
     },
 
     async register({ state, commit }) {
       await axios
-        .post('/users/users', {
+        .post("/users/users", {
           email: state.registerForm.email,
           password: state.registerForm.password,
           height: state.registerForm.height,
@@ -83,22 +81,19 @@ export default {
           lname: state.registerForm.lname,
           phone: state.registerForm.phone,
           gender: state.registerForm.gender,
-          age:state.registerForm.age,
+          age: state.registerForm.age,
           Confirm: state.registerForm.Confirm,
         })
         .then((response) => {
           console.log(response);
-          alert('Đăng kí thành công');
-          commit('clearUserRegisterInfo');
+          alert("Đăng kí thành công");
+          commit("clearUserRegisterInfo");
         })
         .catch((error) => {
           console.log(error);
-          commit('clearUserRegisterInfo');
+          commit("clearUserRegisterInfo");
         });
     },
-   
-
-  
   },
   modules: {},
 };

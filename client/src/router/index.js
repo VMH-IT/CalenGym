@@ -27,7 +27,8 @@ const routes = [
   {
     path: "/MainCalendar",
     name: "MainCalendar",
-    component: () => import("@/components/client/MainCalander/MainCalendar.vue"),
+    component: () =>
+      import("@/components/client/MainCalander/MainCalendar.vue"),
   },
   {
     path: "/Calendar",
@@ -37,13 +38,28 @@ const routes = [
   {
     path: "/categories",
     name: "Categories",
-    component: () => import("@/components/client/Exercises/ExerciseCategories/ListCategory.vue"),
+    children: [
+      {
+        path: "exerciseList",
+        component: () =>
+          import(
+            "@/components/client/Exercises/ExerciseCategories/Category/CategoryEx.vue"
+          ),
+      },
+    ],
+    component: () =>
+      import(
+        "@/components/client/Exercises/ExerciseCategories/ListCategory.vue"
+      ),
   },
   {
     path: "/exerciseList",
     name: "exerciseList",
-    component: () => import("@/components/client/Exercises/ExerciseCategories/Category/CategoryEx.vue"),
-  }
+    component: () =>
+      import(
+        "@/components/client/Exercises/ExerciseCategories/Category/CategoryEx.vue"
+      ),
+  },
 ];
 
 const router = new VueRouter({

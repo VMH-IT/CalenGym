@@ -74,7 +74,7 @@ export default {
 
 .pricing__contsiner>h1 {
   font-size: 1.6rem;
-  color: black;
+  color: rgb(192, 98, 90);
 }
 
 .pricing__section--items {

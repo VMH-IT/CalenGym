@@ -7,11 +7,19 @@
         <th>Description</th>
       </tr>
     </thead>
+
     <tbody>
+
       <tr v-for="Category in categories" :key="Category.id" track-by="id">
-        <td>{{ Category.id }}</td>
-        <td>{{ Category.name_category }}</td>
-        <td>{{ Category.description }}</td>
+        <td>
+          <router-link to="/exerciseList" class="exercise"> {{ Category.id }}</router-link>
+        </td>
+        <td>
+          <router-link to="/exerciseList" class="exercise"> {{ Category.name_category }} </router-link>
+        </td>
+        <td>
+          <router-link to="/exerciseList" class="exercise">{{ Category.description }} </router-link>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -34,3 +42,9 @@ export default {
   }
 }
 </script>
+<style scoped>
+.exercise {
+  text-decoration: none;
+  color: black;
+}
+</style>
