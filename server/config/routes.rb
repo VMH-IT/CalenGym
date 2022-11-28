@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       namespace :users do
         resources :users
         resources :sessions, only: [:create]
+        resources :categories, only: [:index]
         resources :exercises do
           collection do
             get :search_exercise

@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "",
+    name: "Home",
     component: () => import("@/views/HomeView.vue"),
   },
   {
@@ -33,6 +33,16 @@ const routes = [
     path: "/Calendar",
     name: "Calendar",
     component: () => import("@/components/client/Calendar/CalendarGym.vue"),
+  },
+  {
+    path: "/categories",
+    name: "Categories",
+    component: () => import("@/components/client/Exercises/ExerciseCategories/ListCategory.vue"),
+  },
+  {
+    path: "/exerciseList",
+    name: "exerciseList",
+    component: () => import("@/components/client/Exercises/ExerciseCategories/Category/CategoryEx.vue"),
   }
 ];
 

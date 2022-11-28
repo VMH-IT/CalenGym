@@ -98,18 +98,18 @@
             </svg>
           </div>
           <div class="form-pass flex color">
-            <!-- <div class="password-left">
+            <div class="password-left">
               <div class="avata-wrapper">
                 <b>{{ avatar }}</b>
               </div>
               <div class="show-profile">
-                <h3>Name: {{ first_name }} {{ last_name }}</h3>
+                <h3>Name: {{ fname }} {{ lname }}</h3>
                 <p>Email : {{ email }}</p>
                 <p>Gender : {{ gender }}</p>
                 <P>Height : {{ height }} cm</P>
                 <p>Weight : {{ weight }} kg</p>
               </div>
-            </div> -->
+            </div>
             <div class="confirm-password">
               <div class="password-right">
                 <div class="form-field">
@@ -174,8 +174,8 @@ export default ({
       console.log(this.success)
       this.success = !this.success
       console.log(this.success)
-      this.first_names = this.first_name.substring(0, 1).toUpperCase();
-      this.last_names = this.last_name.substring(0, 1).toUpperCase();
+      this.first_names = this.fname.substring(0, 1).toUpperCase();
+      this.last_names = this.lname.substring(0, 1).toUpperCase();
       this.avatar = this.first_names + this.last_names
     },
 

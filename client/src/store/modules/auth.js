@@ -22,6 +22,9 @@ export default {
       password: '',
       Confirm: '',
     },
+    listExercise: {
+      
+    }
   },
   getters: {
     getField,
@@ -56,7 +59,7 @@ export default {
           commit('setUserToken', response.data.token);
           commit('setUserName', response.data.user.last_name);
           alert('Đăng nhập thành công!');
-          // router.push('/');
+          router.push('/Calendar.vue');
         })
         .catch((error) => {
           console.log(error);
@@ -93,6 +96,9 @@ export default {
           commit('clearUserRegisterInfo');
         });
     },
+   
+
+  
   },
   modules: {},
 };

@@ -8,7 +8,7 @@ module Api
           @user = User.all
           render json: @user, each_serializer: UsersSerializer
         end
- 
+
         def show
           @user = User.find(params[:id])
           token = encode_token({ user_id: @user.id })
@@ -22,12 +22,13 @@ module Api
               user: @user,
               message: 'success',
               token: ::JsonWebToken.encode({
-                                            user_id: @user.id
-                                          })
+                                             user_id: @user.id
+                                           })
             }
           else
             render json: {
-              message: 'failed'
+              message: 'failed',
+              validation: @user.errors.messages
             }, status: 400
           end
         end
@@ -44,9 +45,9 @@ module Api
         def destroy
           @user.destroy
         end
-      
+
         private
-    
+
         def user_params
           params.permit(:email, :password, :fname, :lname, :weight, :height, :phone, :age, :gender)
         end

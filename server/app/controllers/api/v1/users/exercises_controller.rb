@@ -2,8 +2,8 @@ module Api
   module V1
     module Users
       class ExercisesController < ApplicationController
-        before_action :authenticate_request_user
-        skip_before_action :authenticate_request_user, only: [:create]
+        # before_action :authenticate_request_user
+        # skip_before_action :authenticate_request_user, only: [:create]
 
         def search_exercise
           @q = Exercise.ransack(params[:q])

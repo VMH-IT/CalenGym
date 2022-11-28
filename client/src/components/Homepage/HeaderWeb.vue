@@ -12,7 +12,9 @@
     <div class=" header-center" id="navbarSupportedContent">
       <ul class=" ">
         <li class="">
-          <a class="" aria-current="page" href="#">HOME</a>
+          <a class="" aria-current="page" href="#">
+            <router-link to="/">HOME</router-link>
+          </a>
           <span></span>
         </li>
         <li class="about">
@@ -28,13 +30,17 @@
           <span></span>
         </li>
         <li class="sign_in">
-          <a href="#">SIGN UP</a>
+          <a href="#">
+            <router-link to="/register">SIGN UP</router-link>
+          </a>
           <span></span>
         </li>
       </ul>
     </div>
     <div class="header-right">
-      <button> LOGIN NOW</button>
+      <button>
+        <router-link to="/login">LOGIN NOW</router-link>
+      </button>
     </div>
   </nav>
 </template>

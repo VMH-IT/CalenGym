@@ -1,7 +1,6 @@
 <template>
   <div class="login_card">
-
-    <form method="post">
+    <form method="post" @submit.prevent="signIn">
       <h1>Sign In</h1>
       <div class="input_field">
         <input type="text" v-model="email" name="" class="form-input" placeholder=" " required />
@@ -14,9 +13,11 @@
         <label>Password</label>
       </div>
       <div class="between">
-        <div><input id="checkBox" @click="pwd" type="checkbox" name="sport" />Show pass</div>
+        <div>
+          <input id="checkBox" @click="pwd" type="checkbox" name="sport" />Show pass
+        </div>
       </div>
-      <input type="submit" @submit.prevent="signIn" value="Login Now" />
+      <input type="submit" value="Login Now" />
     </form>
     <div class="links">
       <div class="password_link">Forgot Password?</div>
@@ -26,21 +27,21 @@
 </template>
 
 <script>
-import { createNamespacedHelpers } from 'vuex';
-import { mapFields } from 'vuex-map-fields';
-const { mapActions } = createNamespacedHelpers('auth');
+import { createNamespacedHelpers } from "vuex";
+import { mapFields } from "vuex-map-fields";
+const { mapActions } = createNamespacedHelpers("auth");
 export default {
   data() {
     return {};
   },
   computed: {
-    ...mapFields('auth', {
-      email: 'loginForm.email',
-      password: 'loginForm.password',
+    ...mapFields("auth", {
+      email: "loginForm.email",
+      password: "loginForm.password",
     }),
   },
   methods: {
-    ...mapActions(['signIn']),
+    ...mapActions(["signIn"]),
 
     pwd() {
       if (document.getElementById("checkBox").checked) {
@@ -50,7 +51,6 @@ export default {
       }
     },
   },
-
 };
 </script>
 
